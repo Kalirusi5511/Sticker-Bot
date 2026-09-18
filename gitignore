@@ -1,0 +1,16 @@
+# Environment & Secrets
+.env
+
+# Datenbank (persistente Daten – NICHT ins Repo!)
+data/
+*.db
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
