@@ -1,29 +1,15 @@
-# ... (Imports, DB-Funktionen, Bot-Setup wie vorher)
+# 1. Projekt anlegen
+mkdir DiscordStickerBot && cd DiscordStickerBot
 
-# --- Berechtigungs-Helfer ---
-def is_owner_or_admin(interaction: discord.Interaction) -> bool:
-    if interaction.guild.owner_id == interaction.user.id:
-        return True
-    if interaction.user.guild_permissions.administrator:
-        return True
-    return False
+# 2. Dateien erstellen (.env, requirements.txt, bot.py, .gitignore)
 
-# --- /sticker add ---
-@sticker_group.command(name="add", ...)
-async def sticker_add(...):
-    # ... (wie vorher)
+# 3. Virtuelle Umgebung
+python -m venv venv
+venv\Scripts\activate      # Windows
+# source venv/bin/activate  # Mac/Linux
 
-# --- /sticker list ---
-@sticker_group.command(name="list", ...)
-async def sticker_list(...):
-    # ... (wie vorher)
+# 4. Pakete installieren
+pip install -r requirements.txt
 
-# --- /sticker show ---
-@sticker_group.command(name="show", ...)
-async def sticker_show(...):
-    # ... (wie vorher)
-
-# --- /sticker delete (NEU mit Owner/Admin-Check) ---
-@sticker_group.command(name="delete", ...)
-async def sticker_delete(...):
-    # ... (siehe oben)
+# 5. Bot starten
+python bot.py
